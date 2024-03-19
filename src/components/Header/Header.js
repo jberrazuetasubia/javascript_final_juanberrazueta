@@ -31,19 +31,20 @@ function Header() {
                 isPending ? "pending" : isActive ? "active" : ""
               }>Home</NavLink>
             </li>
-            <li>
-              <NavLink to="/login" className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
-              }>Login</NavLink>
 
-            </li>
             <li>
               <NavLink to="/about-us" className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
               } >About Us</NavLink>
-
-
             </li>
+            <div className='loginButton'>
+              <li >
+                <NavLink to="/login" className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "active" : ""
+                }>Login</NavLink>
+              </li>
+            </div>
+
           </ul>
         </nav>
       </div>

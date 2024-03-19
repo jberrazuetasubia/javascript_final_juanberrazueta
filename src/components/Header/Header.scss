@@ -69,7 +69,19 @@
         font-weight: bold;
         color: green;
       }
-      
+      .loginButton {
+        background-color: green;
+        color: white !important;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-left: 25px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #28a745;
+        }
+      }
       ul {
         list-style-type: none;
         margin: 0;
@@ -78,10 +90,9 @@
         align-items: center;
   
         li {
-          margin-left: 20px;
           white-space: nowrap;
           cursor: pointer; // Add cursor property
-          // Other styles
+          
   
           a {
             color: #fff;
@@ -92,6 +103,7 @@
               color: green;
             }
           }
+          
         }
       }
   

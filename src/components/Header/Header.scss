@@ -3,7 +3,7 @@
     background-color: #333;
     color: #fff;
     padding: 30px 0;
-  
+
     .container {
       display: flex;
       align-items: center;
@@ -64,7 +64,12 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-  
+      a.active {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: green;
+      }
+      
       ul {
         list-style-type: none;
         margin: 0;
@@ -84,7 +89,7 @@
             transition: color 0.3s ease;
   
             &:hover {
-              color: #ffd700;
+              color: green;
             }
           }
         }

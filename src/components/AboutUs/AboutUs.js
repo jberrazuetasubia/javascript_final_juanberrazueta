@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation, Variants } from 'framer-motion';
 
-function SignUp() {
+function AboutUs() {
 
     const controls = useAnimation();
 
@@ -26,4 +26,4 @@ function SignUp() {
     );
 };
 
-export default SignUp;
+export default AboutUs;

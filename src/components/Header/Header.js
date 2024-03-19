@@ -1,6 +1,6 @@
 // Header.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.scss';
 
 function Header() {
@@ -27,16 +27,23 @@ function Header() {
         <nav className={`menu ${isOpen ? 'open' : ''}`}>
           <ul>
             <li>
-          <a>Test</a>
+              <NavLink to="/" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }>Home</NavLink>
             </li>
             <li>
-          <a>Test</a>
-            </li><li>
-          <a>Test</a>
+              <NavLink to="/login" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }>Login</NavLink>
+
             </li>
-            {/* <li><Link to="/">Home</Link></li>
-            <li><Link to="/recipes">Recipes</Link></li> */}
-            {/* Add more menu items as needed */}
+            <li>
+              <NavLink to="/about-us" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              } >About Us</NavLink>
+
+
+            </li>
           </ul>
         </nav>
       </div>

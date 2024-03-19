@@ -14,8 +14,10 @@ function Header() {
     <header className="header">
       <div className="container">
         <div className="logo">
-          {/* <Link to="/">Recipe App</Link> */}
-          <a>Test</a>
+         <Link to="/">
+          <img className='logo' src="favicon.ico"/>
+          </Link> 
+          
         </div>
         <div className="menu-toggle" onClick={toggleMenu}>
           <div className={`hamburger ${isOpen ? 'open' : ''}`}>

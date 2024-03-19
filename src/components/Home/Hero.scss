@@ -1,0 +1,18 @@
+.heroContainer{
+  background-color: rgb(234, 234, 234);
+  height: 100vh;
+  
+  .flexContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .flexItem {
+    flex: 1;
+    padding: 0%;
+  }
+.imageGrid{
+  margin-top: 0;
+}
+}

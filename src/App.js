@@ -11,7 +11,6 @@ import SignUp from './components/SignUp/SignUp';
 import AboutUs from './components/AboutUs/AboutUs';
 import NotFound from './components/NotFound/NotFound';
 
-
 function App() {
   return (
     <>

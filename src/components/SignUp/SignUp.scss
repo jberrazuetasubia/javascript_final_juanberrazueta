@@ -1,0 +1,26 @@
+.hero{
+    background-color: rgb(234, 234, 234);
+    height: 100vh;
+    
+    .title{
+        margin-top: 20%;
+        font-size: 3em;
+        color: green;
+    }
+    .flexContainer {
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+    }
+    
+    .flexItem {
+      flex: 1;
+      padding: 0%;
+    }
+
+    .form{
+        margin-right: 20px;
+        margin-left: 20px;
+
+    }
+  }

@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { Link, NavLink } from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
 
 import "./Hero.scss";
 import ImageGrid from "./ImageGrid";
@@ -10,9 +9,11 @@ const Hero = () => {
       <div className="heroContainer">
         <div className="flexContainer">
           <div className="flexItem">
-            <h1>Test</h1>
-            <h1>Test</h1>
-            <h1>Test</h1>
+            <h2>Find recipies from every part of the</h2>
+            <h1>World</h1>
+            <h1>Panita Food</h1>
+
+            
             <button><Link to="/signup" >Join Now!</Link></button>
           </div>
           <div className="flexItem">

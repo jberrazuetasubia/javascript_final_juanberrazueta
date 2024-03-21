@@ -20,7 +20,7 @@
 
   }
 
-  .logo:hover{
+  .logo:hover {
     transform: scale(1.1);
   }
 
@@ -74,15 +74,17 @@
       color: #28a745;
     }
 
-    .loginButton {
+    .recipeButton {
       border: 2px solid #28a745;
-      color: white;
       padding: 10px 20px;
       border-radius: 5px;
       margin-left: 25px;
       text-decoration: none;
       transition: background-color 0.3s ease;
-
+      .recipeText{
+        color: #28a745 !important;
+      
+      }
       &:hover {
         background-color: #28a745;
       }
@@ -97,15 +99,15 @@
 
       li {
         white-space: nowrap;
-        cursor: pointer; // Add cursor property
+        cursor: pointer;
         margin-left: 20px;
         margin-right: 20px;
-
+       
         a {
           color: #000000;
           text-decoration: none;
           transition: color 0.3s ease;
-
+         
           &:hover {
             color: green;
           }

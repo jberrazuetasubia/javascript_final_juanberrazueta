@@ -5,21 +5,24 @@ import { motion } from 'framer-motion';
 import { TextField, Button, Stack } from '@mui/material';
 import { Link } from "react-router-dom"
 
-import './SignUp.scss';
+
+import CountrySelect from './CountryComponent';
+import './SendRecipe.scss';
 function SignUp() {
 
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
-    const [dateOfBirth, setDateOfBirth] = useState('')
-    const [password, setPassword] = useState('')
+    const [country, setCountry] = useState('')
 
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(firstName, lastName, email, dateOfBirth, password)
+        console.log(firstName, lastName, email,  country)
     }
-
+    const handleCountrySelect = (country) => {
+        setCountry(country)// Do something with the selected country
+      };
 
     return (
 
@@ -68,31 +71,10 @@ function SignUp() {
                             required
                             sx={{ mb: 4 }}
                         />
-                        <TextField
-                            type="password"
-                            variant='outlined'
-                            color='success'
-                            label="Password"
-                            onChange={e => setPassword(e.target.value)}
-                            value={password}
-                            required
-                            fullWidth
-                            sx={{ mb: 4 }}
-                        />
-                        <TextField
-                            type="date"
-                            variant='outlined'
-                            color='success'
-                            label="Date of Birth"
-                            onChange={e => setDateOfBirth(e.target.value)}
-                            value={dateOfBirth}
-                            fullWidth
-                            required
-                            sx={{ mb: 4 }}
-                        />
-                        <Button variant="outlined" color="success" type="submit">Register</Button>
+                        
+                        <CountrySelect onCountrySelect={handleCountrySelect}/>
+                        <Button variant="outlined" color="success" type="submit">Send the recipe</Button>
                     </form>
-                    <small>Already have an account? <Link to="/login">Login Here</Link></small>
                 </div>
                 <div className="flexItem">
                     <h1>Test</h1>

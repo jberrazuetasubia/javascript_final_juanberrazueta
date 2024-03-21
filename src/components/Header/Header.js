@@ -14,10 +14,10 @@ function Header() {
     <header className="header">
       <div className="container">
         <div className="logo">
-         <Link to="/">
-          <img className='logo' src="favicon.ico"/>
-          </Link> 
-          
+          <Link to="/">
+            <img className='logo' src="favicon.ico" />
+          </Link>
+
         </div>
         <div className="menu-toggle" onClick={toggleMenu}>
           <div className={`hamburger ${isOpen ? 'open' : ''}`}>
@@ -39,11 +39,11 @@ function Header() {
                 isPending ? "pending" : isActive ? "active" : ""
               } >About Us</NavLink>
             </li>
-            <div className='loginButton'>
-              <li >
-                <NavLink to="/login" className={({ isActive, isPending }) =>
+            <div  className='recipeButton'>
+              <li className='recipeText' >
+                <NavLink to="/send-recipe" className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "active" : ""
-                }>Login</NavLink>
+                } >Send your recipe</NavLink>
               </li>
             </div>
 

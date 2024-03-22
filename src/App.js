@@ -9,7 +9,7 @@ import Header from './components/Header/Header';
 import SendRecipe from './components/SendRecipe/SendRecipe';
 import AboutUs from './components/AboutUs/AboutUs';
 import NotFound from './components/NotFound/NotFound';
-
+import Recipes from './components/Recipes/Recipes';
 function App() {
   return (
     <>
@@ -21,7 +21,7 @@ function App() {
           <Route path="/" element={<HomePage/> }  />
           <Route path="/send-recipe" element={<SendRecipe/>} />
           <Route path="/about-us" element={<AboutUs />}/>
-
+          <Route path="/recipes" element={<Recipes />} />
           <Route path="*" element={<NotFound />} />
 
         </Routes>

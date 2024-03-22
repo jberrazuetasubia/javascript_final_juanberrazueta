@@ -33,12 +33,17 @@ function Header() {
                 isPending ? "pending" : isActive ? "active" : ""
               }>Home</NavLink>
             </li>
-
+            <li>
+              <NavLink to="/recipes" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              } >Recipes</NavLink>
+            </li>
             <li>
               <NavLink to="/about-us" className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
               } >About Us</NavLink>
             </li>
+            
             <div  className='recipeButton'>
               <li className='recipeText' >
                 <NavLink to="/send-recipe" className={({ isActive, isPending }) =>

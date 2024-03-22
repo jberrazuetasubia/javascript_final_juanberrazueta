@@ -1,0 +1,32 @@
+.recipe-container {
+    padding: 20px;
+  }
+  
+  .recipe-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .recipe-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: calc(33.33% - 20px); /* Adjust as needed */
+    box-sizing: border-box;
+  }
+  
+  .recipe-card h2 {
+    margin-top: 0;
+  }
+  
+  .recipe-card ul {
+    margin-top: 5px;
+  }
+  
+  .recipe-card ul li {
+    list-style: none;
+  }
+  
+  /* Add more styling as needed */
+  

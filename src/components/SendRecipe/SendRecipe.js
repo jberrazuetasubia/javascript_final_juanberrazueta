@@ -21,8 +21,8 @@ function SignUp() {
         console.log(firstName, lastName, email,  country)
     }
     const handleCountrySelect = (country) => {
-        setCountry(country)// Do something with the selected country
-      };
+        setCountry(country)
+    };
 
     return (
 
@@ -35,7 +35,7 @@ function SignUp() {
                         transition={{ duration: 0.5 }}
                         className='title'
                     >
-                        Sign Up
+                        Send your recipe!
                     </motion.h1>
                     <form onSubmit={handleSubmit} action={<Link to="/login" />} className='form'>
                         <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
@@ -71,7 +71,7 @@ function SignUp() {
                             required
                             sx={{ mb: 4 }}
                         />
-                        
+                        <h2>Write your recipe</h2>
                         <CountrySelect onCountrySelect={handleCountrySelect}/>
                         <Button variant="outlined" color="success" type="submit">Send the recipe</Button>
                     </form>

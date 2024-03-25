@@ -15,7 +15,7 @@ function srcset(image, width, height, rows = 1, cols = 1) {
 
 export default function ImageGrid() {
   return (
-    <ImageList className="imageGrid" rowHeight={400} gap={0}>
+    <ImageList className="imageGrid" rowHeight={400} variant="masonry" cols={3} gap={8}>
       {itemData.map((item) => {
         const cols = item.featured ? 2 : 1;
         const rows = item.featured ? 2 : 1;

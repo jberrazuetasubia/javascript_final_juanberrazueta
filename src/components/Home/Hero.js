@@ -12,7 +12,7 @@ const Hero = () => {
             <h2>Find recipies from every part of the</h2>
             <h1>World</h1>
             <h1>Panita Food</h1>
-            <button><Link to="/signup" >Join Now!</Link></button>
+            <button><Link to="/send-recipe" >Send your recipe now!</Link></button>
           </div>
           <div className="flexItem">
             <ImageGrid className="imageGrid" />

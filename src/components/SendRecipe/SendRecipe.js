@@ -1,5 +1,5 @@
 
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { TextField, Button, Stack } from '@mui/material';
@@ -14,29 +14,42 @@ function SignUp() {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [country, setCountry] = useState('')
+    const [recipeSteps, setRecipeSteps] = useState(['']); // State to store recipe steps
 
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(firstName, lastName, email,  country)
+        const recipe = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            country: country,
+            recipeSteps: recipeSteps,
+        };
+        console.log(recipe)
     }
     const handleCountrySelect = (country) => {
         setCountry(country)
     };
 
+    const handleStepChange = (index, value) => {
+        const steps = [...recipeSteps];
+        steps[index] = value;
+        setRecipeSteps(steps);
+    };
+
+    const addStepField = () => {
+        setRecipeSteps([...recipeSteps, '']);
+    };
+
     return (
 
         <div className="hero">
+
             <div className="flexContainer">
+
                 <div className="flexItem">
-                    <motion.h1
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.9 }}
-                        transition={{ duration: 0.5 }}
-                        className='title'
-                    >
-                        Send your recipe!
-                    </motion.h1>
+
                     <form onSubmit={handleSubmit} action={<Link to="/login" />} className='form'>
                         <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
                             <TextField
@@ -72,7 +85,29 @@ function SignUp() {
                             sx={{ mb: 4 }}
                         />
                         <h2>Write your recipe</h2>
-                        <CountrySelect onCountrySelect={handleCountrySelect}/>
+                        <h3 style={{ textAlign: "left" }}>Where it is from?</h3>
+                        <CountrySelect onCountrySelect={handleCountrySelect} />
+
+                        {recipeSteps.map((step, index) => (
+                            <TextField
+                                key={index}
+                                type="text"
+                                variant="outlined"
+                                color="success"
+                                label={`Step ${index + 1}`}
+                                onChange={(e) => handleStepChange(index, e.target.value)}
+                                value={step}
+                                fullWidth
+                                required
+                                sx={{ mb: 2 }}
+                            />
+                        ))}
+                        {/* Button to add new step field */}
+                        <Button variant="outlined" color="success" onClick={addStepField}>
+                            Add Step
+                        </Button>
+
+
                         <Button variant="outlined" color="success" type="submit">Send the recipe</Button>
                     </form>
                 </div>

@@ -1,56 +1,88 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-
-import { TextField, Button, Stack, Input, IconButton } from '@mui/material';
+import { TextField, Button, Stack, Input, IconButton, CircularProgress } from '@mui/material';
 import { Link } from "react-router-dom"
-
-
 import CountrySelect from './CountryComponent';
 import './SendRecipe.scss';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import { v4 as uuidv4 } from 'uuid';
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import firebaseConfig from '../../database/firebase_config';
 
-import CloudUploadIcon from '@mui/icons-material/CloudUpload'; // Import CloudUploadIcon from Material-UI
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
 
-function SignUp() {
+function SendRecipe() {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [country, setCountry] = useState('');
+    const [recipeSteps, setRecipeSteps] = useState(['']);
+    const [ingredientsSet, setIngredients] = useState(['']);
+    const [recipeImage, setRecipeImage] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [successMessage, setSuccessMessage] = useState('');
 
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [email, setEmail] = useState('')
-    const [country, setCountry] = useState('')
-    const [recipeSteps, setRecipeSteps] = useState(['']); // State to store recipe steps
-    const [ingredientsSet, setIngredients] = useState(['']); // State to store ingredients
-    const [recipeImage, setRecipeImage] = useState(null); // State to store recipe image file
+    const resetFormFields = () => {
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setCountry('');
+        setRecipeSteps(['']);
+        setIngredients(['']);
+        setRecipeImage(null);
+    };
 
-    function handleSubmit(event) {
+    const handleSubmit = async(event) => {
         event.preventDefault();
+        setLoading(true);
+
+        const imageRef = ref(storage, `recipeImages/${uuidv4()}`);
+        await uploadBytes(imageRef, recipeImage);
+
+        const imageUrl = await getDownloadURL(imageRef);
+
+        const uid = uuidv4();
         const recipe = {
+            uid: uid,
             firstName: firstName,
             lastName: lastName,
             email: email,
             country: country,
             recipeSteps: recipeSteps,
             ingredients: ingredientsSet,
-            recipeImage: recipeImage
-
+            recipeImage: imageUrl,
         };
-        console.log(recipe)
-    }
-    const handleCountrySelect = (country) => {
-        setCountry(country)
-    };
 
-    //Ingredients
+        try {
+            await addDoc(collection(db, "recipes"), recipe);
+            console.log("Recipe uploaded successfully!");
+            setSuccessMessage('Recipe sent!');
+        } catch (error) {
+            console.error("Error uploading recipe:", error);
+        }
+
+        setLoading(false);
+        resetFormFields();
+    }
+
+    const handleCountrySelect = (country) => {
+        setCountry(country);
+    };
 
     const handleIngredientChange = (index, value) => {
         const ingredients = [...ingredientsSet];
         ingredients[index] = value;
         setIngredients(ingredients);
     }
+
     const addIngredientField = () => {
         setIngredients([...ingredientsSet, '']);
     }
 
-    //Steps
     const handleStepChange = (index, value) => {
         const steps = [...recipeSteps];
         steps[index] = value;
@@ -61,15 +93,12 @@ function SignUp() {
         setRecipeSteps([...recipeSteps, '']);
     };
 
-    // Handle file upload
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         setRecipeImage(file);
     };
 
-
     return (
-
         <div className="hero">
             <motion.h1
                 whileHover={{ scale: 1.2 }}
@@ -79,13 +108,10 @@ function SignUp() {
             >
                 Send your recipe!
             </motion.h1>
-
             <form onSubmit={handleSubmit} action={<Link to="/login" />} className='form'>
                 <div className="flexContainer">
                     <div className="flexItem">
-
                         <h2>Tell us about yourself!</h2>
-
                         <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
                             <TextField
                                 type="text"
@@ -121,11 +147,9 @@ function SignUp() {
                         />
                         <h2>Write your recipe</h2>
                         <h3 style={{ textAlign: "left" }}>Where it is from?</h3>
-                        <CountrySelect onCountrySelect={handleCountrySelect} />
-
+                        <CountrySelect key={country} onCountrySelect={handleCountrySelect} />
                         <div style={{ marginTop: "20px" }}>
                             <h4 style={{ textAlign: "left" }}>List all your ingredients!</h4>
-
                             {ingredientsSet.map((ingredient, index) => (
                                 <TextField
                                     key={index}
@@ -140,18 +164,13 @@ function SignUp() {
                                     sx={{ mb: 2 }}
                                 />
                             ))}
-                            {/* Button to add new step field */}
-                            <Button variant="outlined" color="success" onClick={addIngredientField}>
+                            <Button className='add' variant="outlined" color="success" onClick={addIngredientField}>
                                 Add new ingredient
                             </Button>
                         </div>
-
-
                     </div>
                     <div className="flexItem">
-
                         <h3 style={{ textAlign: "left" }}>Write all the steps!</h3>
-
                         {recipeSteps.map((step, index) => (
                             <TextField
                                 key={index}
@@ -166,23 +185,17 @@ function SignUp() {
                                 sx={{ mb: 2 }}
                             />
                         ))}
-                        {/* Button to add new step field */}
-                        <Button variant="outlined" color="success" onClick={addStepField}>
+                        <Button className='add' variant="outlined" color="success" onClick={addStepField}>
                             Add Step
                         </Button>
-
-
                         <h3 style={{ textAlign: "left" }}>Upload your recipe photo!</h3>
-
-
-
-                        <div style={{textAlign: "left"}}>
+                        <div style={{ textAlign: "left" }}>
                             <Input
                                 type="file"
                                 onChange={handleFileChange}
                                 inputProps={{ accept: 'image/*' }}
                                 color="success"
-                                style={{width: "100%"}}
+                                style={{ width: "100%" }}
                                 endAdornment={
                                     <IconButton color="success" component="span">
                                         <CloudUploadIcon />
@@ -190,22 +203,19 @@ function SignUp() {
                                 }
                             />
                         </div>
-
-
-                        <Button style={{marginTop: "2%", width: "100%", backgroundColor: "green", color: "white", height: "50px"}} variant="outlined" color="success" type="submit">Send the recipe</Button>
+                        {loading ? (
+                            <CircularProgress color="success" />
+                        ) : (
+                            <Button className='submitButton' variant="outlined" color="success" type="submit">Send the recipe</Button>
+                        )}
+                        {successMessage && (
+                            <p style={{ color: 'green' }}>{successMessage}</p>
+                        )}
                     </div>
-
                 </div>
-
             </form>
-
         </div>
-
-
-
-
-
     );
 };
 
-export default SignUp;
+export default SendRecipe

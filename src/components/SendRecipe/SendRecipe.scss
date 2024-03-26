@@ -1,6 +1,4 @@
 .hero{
-    background-color: rgb(234, 234, 234);
-    height: 100%;
     
     .title{
         padding-top: 2%;
@@ -22,5 +20,17 @@
         margin-right: 20px;
         margin-left: 20px;
 
+    }
+    .add{
+      width: 50%;
+      height: 50px;
+    }
+
+    .submitButton{
+      margin-top: 2%;
+      width: 100%;
+      background-color: green;
+      color: white;
+      height: 50px;
     }
   }

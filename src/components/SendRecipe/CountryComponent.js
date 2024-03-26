@@ -43,6 +43,7 @@ export default function CountrySelect({onCountrySelect}) {
 }
 
 const countries = [
+  { code: 'All', label: 'All' },
     { code: 'AD', label: 'Andorra' },
     { code: 'AE', label: 'United Arab Emirates' },
     { code: 'AF', label: 'Afghanistan' },

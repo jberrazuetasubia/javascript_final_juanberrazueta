@@ -7,6 +7,9 @@ import Modal from '@mui/material/Modal';
 import recipesData from '../recipes.json';
 import './Recipes.scss';
 
+
+import CountrySelect from '../SendRecipe/CountryComponent';
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -23,6 +26,10 @@ function Recipes() {
   const [selectedCountry, setSelectedCountry] = useState('');
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [open, setOpen] = React.useState(false);
+
+
+  const [country, setCountry] = useState('');
+
 
   //Handlers to close and open the modal
   const handleOpen = () => setOpen(true);
@@ -42,11 +49,16 @@ function Recipes() {
     handleOpen();
   };
 
+  const handleCountrySelect = (country) => {
+    setCountry(country);
+    console.log(country);
+};
   return (
     <div className="recipe-container">
       <h1>Recipes</h1>
       <div>
         <label htmlFor="country-select">Select Country:</label>
+        <CountrySelect key={country} onCountrySelect={handleCountrySelect} />
         <select id="country-select" value={selectedCountry} onChange={handleCountryChange}>
           <option value="">All</option>
           <option value="Italy">Italy</option>
@@ -63,7 +75,7 @@ function Recipes() {
             <p><strong>Email:</strong> {recipe.email}</p>
           <p><strong>Name:</strong> {recipe.name_sender}</p>
        
-            <Button variant="outlined" onClick={() => handleRecipeDetails(recipe)}>View Details</Button>
+            <Button autocomplete="false" variant="outlined" onClick={() => handleRecipeDetails(recipe)}>View Details</Button>
           </div>
         ))}
       </div>

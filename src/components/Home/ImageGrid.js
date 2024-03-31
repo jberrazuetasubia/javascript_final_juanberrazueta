@@ -15,7 +15,7 @@ function srcset(image, width, height, rows = 1, cols = 1) {
 
 export default function ImageGrid() {
   return (
-    <ImageList className="imageGrid" rowHeight={400} variant="masonry" cols={3} gap={8}>
+    <ImageList className="imageGrid" rowHeight={500} variant="masonry" cols={3} gap={2}>
       {itemData.map((item) => {
         const cols = item.featured ? 2 : 1;
         const rows = item.featured ? 2 : 1;
@@ -23,7 +23,7 @@ export default function ImageGrid() {
         return (
           <ImageListItem key={item.img} cols={cols} rows={rows}>
             <img
-              {...srcset(item.img, 200, 150, rows, cols)}
+              {...srcset(item.img, 300, 150, rows, cols)}
               alt={item.title}
               loading="lazy"
             />
@@ -62,8 +62,13 @@ const itemData = [
     author: '@nolanissac',
   },
   {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
+    img: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe',
+    title: 'Salad',
     author: '@hjrc33',
   },
+  {
+    img: 'https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f',
+    title: 'Fries',
+    author: '@arwinneil',
+  }
 ];

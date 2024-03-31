@@ -1,5 +1,9 @@
 
 import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
+import { motion } from 'framer-motion';
+
+
 
 import "./Hero.scss";
 import ImageGrid from "./ImageGrid";
@@ -8,13 +12,22 @@ const Hero = () => {
     <>
       <div className="heroContainer">
         <div className="flexContainer">
-          <div className="flexItem">
-            <h2>Find recipies from every part of the</h2>
-            <h1>World</h1>
-            <h1>Panita Food</h1>
-            <button><Link to="/send-recipe" >Send your recipe now!</Link></button>
+          <div className="flexItem1">
+            <div className='containerFlexItem1'>
+              <h2>Find recipies from every part of the world</h2>
+              <motion.h1
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.5 }}
+                className='title'
+              >
+                Panita Food
+              </motion.h1>
+              <Button className='buttonCall' ><Link to="/send-recipe" className="text" >Send your recipe now!</Link></Button>
+            </div>
+
           </div>
-          <div className="flexItem">
+          <div className="flexItem2">
             <ImageGrid className="imageGrid" />
           </div>
         </div>

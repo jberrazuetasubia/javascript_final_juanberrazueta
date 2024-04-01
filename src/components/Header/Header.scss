@@ -81,13 +81,15 @@
       margin-left: 25px;
       text-decoration: none;
       transition: background-color 0.3s ease;
-      .recipeText{
-        color: #28a745 !important;
-      
-      }
+      color: green;
+      transition: transform 0.3s ease;
+
       &:hover {
         background-color: #28a745;
+        color: white;
+        transform: scale(1.1);
       }
+
     }
 
     ul {
@@ -102,12 +104,12 @@
         cursor: pointer;
         margin-left: 20px;
         margin-right: 20px;
-       
+
         a {
           color: #000000;
           text-decoration: none;
           transition: color 0.3s ease;
-         
+
           &:hover {
             color: green;
           }

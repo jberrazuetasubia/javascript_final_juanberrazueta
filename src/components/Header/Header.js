@@ -1,6 +1,8 @@
 // Header.js
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { Button } from '@mui/material';
+
 import './Header.scss';
 
 function Header() {
@@ -39,16 +41,17 @@ function Header() {
               } >Recipes</NavLink>
             </li>
             <li>
-              <NavLink to="/about-us" className={({ isActive, isPending }) =>
+              <NavLink to="/about-us"  className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
               } >About Us</NavLink>
             </li>
-            
-            <div  className='recipeButton'>
-              <li className='recipeText' >
-                <NavLink to="/send-recipe" className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                } >Send your recipe</NavLink>
+
+            <div >
+              <li >
+                <NavLink to="/send-recipe" ><Button className='recipeButton'>
+                  Send your recipe
+                </Button>
+                </NavLink>
               </li>
             </div>
 

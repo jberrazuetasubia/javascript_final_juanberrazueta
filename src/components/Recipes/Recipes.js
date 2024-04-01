@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import recipesData from '../recipes.json';
 import './Recipes.scss';
+import { Link } from 'react-router-dom';
 
 
 import CountrySelect from '../SendRecipe/CountryComponent';
@@ -41,34 +42,77 @@ function Recipes() {
     handleOpen();
   };
 
-  const handleCountrySelect = (country) => {  
-    setSelectedCountry(country && country.label ? country.label : ''); 
-  console.log('country', country && country.label ? country.label : 'All'); 
+  const handleCountrySelect = (country) => {
+    setSelectedCountry(country && country.label ? country.label : '');
+    console.log('country', country && country.label ? country.label : 'All');
   };
+
+
+
+  const getRandomRecipe = (recipes) => {
+    const randomIndex = Math.floor(Math.random() * recipes.length);
+    return recipes[randomIndex];
+  };
+
+  const handleRandomRecipe = () => {
+    const randomRecipe = getRandomRecipe(filteredRecipes);
+    setSelectedRecipe(randomRecipe);
+    handleOpen();
+  };
+
   return (
     <div className="recipe-container">
-      <h1>Recipes</h1>
-      <div>
-        <h2 style={{textAlign:'left'}}>Select Country:</h2>
+
+
+      <motion.h1
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ duration: 0.2 }}
+        className='title'
+      >
+        Find your recipe!
+      </motion.h1>
+      <div id="mySidenav" class="sidenav">
+        <Button id='tryNew' onClick={handleRandomRecipe}>Try something new!</Button>
+      </div>
+      <div className='country'>
+        <h2 style={{ textAlign: 'left' }}>Select Country:</h2>
         <CountrySelect value={selectedCountry} onCountrySelect={handleCountrySelect} />
-      
       </div>
       <div className="recipe-cards">
-  {filteredRecipes.length > 0 ? (
-    filteredRecipes.map((recipe, index) => (
-      <div className="recipe-card" key={index}>
-        <h2>{recipe.name}</h2>
-        <p><strong>Country:</strong> {recipe.country}</p>
-        <p><strong>Email:</strong> {recipe.email}</p>
-        <p><strong>Name:</strong> {recipe.name_sender}</p>
+        {filteredRecipes.length > 0 ? (
+          filteredRecipes.map((recipe, index) => (
+            <div className="recipe-card" key={index}>
+              <h2>{recipe.name}</h2>
+              <p><strong>Country:</strong> {recipe.country}</p>
+              <p><strong>Email:</strong> {recipe.email}</p>
+              <p><strong>Name:</strong> {recipe.name_sender}</p>
 
-        <Button className='recipeButton' autocomplete="false" variant="outlined" onClick={() => handleRecipeDetails(recipe)}>View Details</Button>
+              <Button className='recipeButton' autocomplete="false" variant="outlined" onClick={() => handleRecipeDetails(recipe)}>View Details</Button>
+            </div>
+          ))
+        ) : (
+          <>
+            <div className='noFoundContainer'>
+              <motion.h1
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.2 }}
+                className='noFound'
+              >
+                No recipes found yet!
+              </motion.h1>
+
+              <Link to="/send-recipe" ><Button className='buttonCall' >Help us with more recipes!</Button></Link>
+
+
+            </div>
+
+          </>
+
+
+        )}
       </div>
-    ))
-  ) : (
-    <p>No recipes available yet for this country.</p>
-  )}
-</div>
       <Modal
         open={open}
         onClose={handleClose}

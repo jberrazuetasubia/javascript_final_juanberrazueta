@@ -13,7 +13,7 @@ export default function CountrySelect({onCountrySelect}) {
       autoHighlight
 
       getOptionLabel={(option) => option.label}
-      onChange={(event, value) => onCountrySelect(value)} // Add this line
+      onChange={(event, value) => onCountrySelect(value)} // Handle country selection
 
       renderOption={(props, option) => (
         <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
@@ -33,7 +33,6 @@ export default function CountrySelect({onCountrySelect}) {
           label="Choose a country"
           inputProps={{
             ...params.inputProps,
-            autoComplete: 'new-password', // disable autocomplete and autofill
           }}
           
         />

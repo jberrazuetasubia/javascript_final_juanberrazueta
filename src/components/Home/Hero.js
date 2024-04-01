@@ -23,7 +23,8 @@ const Hero = () => {
               >
                 Panita Food
               </motion.h1>
-              <Button className='buttonCall' ><Link to="/send-recipe" className="text" >Send your recipe now!</Link></Button>
+              <Link to="/send-recipe" > <Button className='buttonCall' > Send your recipe now!</Button></Link>
+              
             </div>
 
           </div>

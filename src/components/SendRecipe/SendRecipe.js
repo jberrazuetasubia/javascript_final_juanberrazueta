@@ -20,6 +20,7 @@ function SendRecipe() {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [country, setCountry] = useState('');
+    const [recipeName, setRecipeName] = useState(['']);
     const [recipeSteps, setRecipeSteps] = useState(['']);
     const [ingredientsSet, setIngredients] = useState(['']);
     const [recipeImage, setRecipeImage] = useState(null);
@@ -31,12 +32,13 @@ function SendRecipe() {
         setLastName('');
         setEmail('');
         setCountry('');
+        setRecipeName('');
         setRecipeSteps(['']);
         setIngredients(['']);
         setRecipeImage(null);
     };
 
-    const handleSubmit = async(event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         setLoading(true);
 
@@ -52,6 +54,7 @@ function SendRecipe() {
             lastName: lastName,
             email: email,
             country: country,
+            recipeName: recipeName,
             recipeSteps: recipeSteps,
             ingredients: ingredientsSet,
             recipeImage: imageUrl,
@@ -146,8 +149,32 @@ function SendRecipe() {
                             sx={{ mb: 4 }}
                         />
                         <h2>Write your recipe</h2>
-                        <h3 style={{ textAlign: "left" }}>Where it is from?</h3>
-                        <CountrySelect key={country} onCountrySelect={handleCountrySelect} />
+                        <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
+                            <div
+                                style={{ width: "100%" }}
+                            >
+                                <h3 style={{ textAlign: "left" }}>Where it is from?</h3>
+                                <CountrySelect style={{ width: "100%" }} key={country} onCountrySelect={handleCountrySelect} />
+
+                            </div>
+                            <div
+                                style={{ width: "100%" }}
+                            >
+                                <h3 style={{ textAlign: "left" }}>What is the name of the dish?</h3>
+                                <TextField
+                                    type="text"
+                                    variant='outlined'
+                                    color='success'
+                                    label="Name of recipe"
+                                    onChange={e => setRecipeName(e.target.value)}
+                                    value={recipeName}
+                                    fullWidth
+                                    required
+                                />
+                            </div>
+
+                        </Stack>
+                       
                         <div style={{ marginTop: "20px" }}>
                             <h4 style={{ textAlign: "left" }}>List all your ingredients!</h4>
                             {ingredientsSet.map((ingredient, index) => (

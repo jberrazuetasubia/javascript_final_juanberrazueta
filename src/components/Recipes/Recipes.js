@@ -11,15 +11,7 @@ import './Recipes.scss';
 import CountrySelect from '../SendRecipe/CountryComponent';
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  rounded: 20,
-  boxShadow: 24,
-  p: 4,
+
 };
 
 function Recipes() {
@@ -49,52 +41,53 @@ function Recipes() {
     handleOpen();
   };
 
-  const handleCountrySelect = (country) => {
-    setCountry(country);
-    console.log(country);
-};
+  const handleCountrySelect = (country) => {  
+    setSelectedCountry(country && country.label ? country.label : ''); 
+  console.log('country', country && country.label ? country.label : 'All'); 
+  };
   return (
     <div className="recipe-container">
       <h1>Recipes</h1>
       <div>
-        <label htmlFor="country-select">Select Country:</label>
-        <CountrySelect key={country} onCountrySelect={handleCountrySelect} />
-        <select id="country-select" value={selectedCountry} onChange={handleCountryChange}>
-          <option value="">All</option>
-          <option value="Italy">Italy</option>
-          <option value="France">France</option>
-          <option value="India">India</option>
-          {/* Add more countries as needed */}
-        </select>
+        <h2 style={{textAlign:'left'}}>Select Country:</h2>
+        <CountrySelect value={selectedCountry} onCountrySelect={handleCountrySelect} />
+      
       </div>
       <div className="recipe-cards">
-        {filteredRecipes.map((recipe, index) => (
-          <div className="recipe-card" key={index}>
-            <h2>{recipe.name}</h2>
-            <p><strong>Country:</strong> {recipe.country}</p>
-            <p><strong>Email:</strong> {recipe.email}</p>
-          <p><strong>Name:</strong> {recipe.name_sender}</p>
-       
-            <Button autocomplete="false" variant="outlined" onClick={() => handleRecipeDetails(recipe)}>View Details</Button>
-          </div>
-        ))}
+  {filteredRecipes.length > 0 ? (
+    filteredRecipes.map((recipe, index) => (
+      <div className="recipe-card" key={index}>
+        <h2>{recipe.name}</h2>
+        <p><strong>Country:</strong> {recipe.country}</p>
+        <p><strong>Email:</strong> {recipe.email}</p>
+        <p><strong>Name:</strong> {recipe.name_sender}</p>
+
+        <Button className='recipeButton' autocomplete="false" variant="outlined" onClick={() => handleRecipeDetails(recipe)}>View Details</Button>
       </div>
+    ))
+  ) : (
+    <p>No recipes available yet for this country.</p>
+  )}
+</div>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <h2>{selectedRecipe && selectedRecipe.name}</h2>
-          <p><strong>Ingredients:</strong></p>
-          <ul>
-            {selectedRecipe && selectedRecipe.ingredients.map((ingredient, i) => (
-              <li key={i}>{ingredient}</li>
-            ))}
-          </ul>
-          <p><strong>Instructions:</strong> {selectedRecipe && selectedRecipe.instructions}</p>
-         </Box>
+        <Box className="box">
+          <div className='boxContent'>
+            <h2 className='titleBox'>{selectedRecipe && selectedRecipe.name}</h2>
+            <p><strong>Ingredients:</strong></p>
+            <ul>
+              {selectedRecipe && selectedRecipe.ingredients.map((ingredient, i) => (
+                <li key={i}>{ingredient}</li>
+              ))}
+            </ul>
+            <p><strong>Instructions:</strong> {selectedRecipe && selectedRecipe.instructions}</p>
+          </div>
+
+        </Box>
       </Modal>
     </div>
   );

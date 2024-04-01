@@ -51,22 +51,18 @@
     cursor: pointer;
     transition: all 0.3s ease;
     background-color: none;
+    text-decoration: none;
+    color: green !important;
 
-    .text {
-      text-decoration: none;
-      color: green;
-    }
   }
 
   .buttonCall:hover {
     background-color: green;
     color: white;
     transform: scale(1.1);
-
-    .text {
-      text-decoration: none;
-      color: white;
-    }
+    text-decoration: none;
+    color: white !important;
+    
   }
 
 

@@ -68,6 +68,11 @@
   width: calc(33.33% - 20px);
   box-sizing: border-box;
 
+  .recipeImage{
+    width: 70%;
+    text-align: center;
+    border-radius: 5px;
+  }
   .recipeButton {
     border-color: green;
     color: green;
@@ -120,8 +125,15 @@
       font-weight: 700;
       margin-bottom: 20px;
       color: green;
+
+
     }
-  }
+
+    .recipeImage{
+      width: 100%;
+      text-align: center;
+      border-radius: 5px;
+    }  }
 }
 
 #mySidenav {

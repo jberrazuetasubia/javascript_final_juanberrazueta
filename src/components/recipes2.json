@@ -1,0 +1,507 @@
+[
+  {
+    "country": "Italy",
+    "email": "luca.rossi@example.com",
+    "firstName": "Luca",
+    "lastName": "Rossi",
+    "recipeName": "Classic Margherita Pizza",
+    "recipeDescription": "An iconic Italian pizza with a simple yet delicious topping of fresh mozzarella cheese, tomatoes, and basil. Perfect for any pizza night.",
+    "ingredients": [
+      "Pizza dough",
+      "Fresh mozzarella cheese"
+    ],
+    "instructions": [
+      "Preheat the oven to 475°F (245°C).",
+      "Top with slices of fresh mozzarella and fresh basil leaves.",
+      "Bake in the preheated oven for 12-15 minutes."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/1.webp"
+  },
+  {
+    "country": "China",
+    "email": "ming.zhao@example.com",
+    "firstName": "Ming",
+    "lastName": "Zhao",
+    "recipeName": "Vegetarian Stir-Fry",
+    "recipeDescription": "A vibrant and nutritious stir-fry packed with tofu and fresh vegetables, flavored with soy sauce and sesame oil. A delightful Asian-inspired dish.",
+    "ingredients": [
+      "Tofu, cubed",
+      "Soy sauce"
+    ],
+    "instructions": [
+      "In a wok, heat sesame oil over medium-high heat.",
+      "Add cubed tofu and stir-fry until golden brown.",
+      "Serve over cooked rice."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/2.webp"
+  },
+  {
+    "country": "United States",
+    "email": "emily.johnson@example.com",
+    "firstName": "Emily",
+    "lastName": "Johnson",
+    "recipeName": "Chocolate Chip Cookies",
+    "recipeDescription": "The ultimate comfort food, these chocolate chip cookies are gooey in the middle, crisp on the outside, and loaded with chocolate chips.",
+    "ingredients": [
+      "All-purpose flour",
+      "Chocolate chips"
+    ],
+    "instructions": [
+      "Preheat the oven to 350°F (175°C).",
+      "Fold in chocolate chips.",
+      "Bake for 10-12 minutes."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/3.webp"
+  },
+  {
+    "country": "Italy",
+    "email": "giulia.ferrari@example.com",
+    "firstName": "Giulia",
+    "lastName": "Ferrari",
+    "recipeName": "Chicken Alfredo Pasta",
+    "recipeDescription": "A creamy and comforting Italian dish featuring tender chicken and fettuccine pasta coated in a rich Alfredo sauce.",
+    "ingredients": [
+      "Fettuccine pasta",
+      "Parmesan cheese, grated"
+    ],
+    "instructions": [
+      "Cook fettuccine pasta according to package instructions.",
+      "Combine the Alfredo sauce with cooked pasta.",
+      "Garnish with fresh parsley before serving."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/4.webp"
+  },
+  {
+    "country": "Mexico",
+    "email": "carlos.martinez@example.com",
+    "firstName": "Carlos",
+    "lastName": "Martinez",
+    "recipeName": "Mango Salsa Chicken",
+    "recipeDescription": "A sweet and spicy dish featuring grilled chicken topped with a fresh mango salsa. A delightful mix of flavors that's perfect for summer.",
+    "ingredients": [
+      "Chicken thighs",
+      "Mango, diced"
+    ],
+    "instructions": [
+      "Season chicken thighs with salt and pepper.",
+      "In a bowl, combine diced mango, chopped red onion, cilantro, minced jalapeño, and lime juice.",
+      "Serve over cooked rice."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/5.webp"
+  },
+  {
+    "country": "Greece",
+    "email": "elena.papadopoulos@example.com",
+    "firstName": "Elena",
+    "lastName": "Papadopoulos",
+    "recipeName": "Quinoa Salad with Avocado",
+    "recipeDescription": "A refreshing and nutritious salad combining quinoa, avocado, and various vegetables, dressed in a lemon vinaigrette. Perfect for a light meal or side dish.",
+    "ingredients": [
+      "Quinoa, cooked",
+      "Avocado, diced"
+    ],
+    "instructions": [
+      "In a large bowl, combine cooked quinoa, diced avocado, and vegetables.",
+      "Drizzle with lemon vinaigrette dressing and toss to combine.",
+      "Chill in the refrigerator before serving."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/6.webp"
+  },
+  {
+    "country": "Italy",
+    "email": "marco.bianchi@example.com",
+    "firstName": "Marco",
+    "lastName": "Bianchi",
+    "recipeName": "Tomato Basil Bruschetta",
+    "recipeDescription": "A classic Italian appetizer consisting of toasted baguette slices topped with a flavorful mixture of fresh tomatoes and basil.",
+    "ingredients": [
+      "Baguette, sliced",
+      "Fresh basil, chopped"
+    ],
+    "instructions": [
+      "Preheat the oven to 375°F (190°C).",
+      "Top each toasted baguette slice with the tomato-basil mixture.",
+      "Drizzle with balsamic glaze before serving."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/7.webp"
+  },
+  {
+    "country": "China",
+    "email": "li.wang@example.com",
+    "firstName": "Li",
+    "lastName": "Wang",
+    "recipeName": "Beef and Broccoli Stir-Fry",
+    "recipeDescription": "A savory and healthy stir-fry dish featuring tender beef slices and broccoli in a rich sauce. A favorite in Chinese cuisine.",
+    "ingredients": [
+      "Beef sirloin, thinly sliced",
+      "Broccoli florets"
+    ],
+    "instructions": [
+      "In a wok, stir-fry thinly sliced beef until browned.",
+      "Stir-fry broccoli florets, minced garlic, and minced ginger.",
+      "Serve over cooked white rice."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/8.webp"
+  },
+  {
+    "country": "Italy",
+    "email": "francesca.romano@example.com",
+    "firstName": "Francesca",
+    "lastName": "Romano",
+    "recipeName": "Caprese Salad",
+    "recipeDescription": "A simple yet elegant Italian salad, featuring fresh tomatoes, mozzarella cheese, and basil leaves, drizzled with balsamic glaze.",
+    "ingredients": [
+      "Tomatoes, sliced",
+      "Fresh mozzarella cheese, sliced"
+    ],
+    "instructions": [
+      "Arrange alternating slices of tomatoes and fresh mozzarella on a serving platter.",
+      "Drizzle with balsamic glaze and extra virgin olive oil.",
+      "Season with salt and pepper to taste."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/9.webp"
+  },
+  {
+    "country": "Italy",
+    "email": "serena.conti@example.com",
+    "firstName": "Serena",
+    "lastName": "Conti",
+    "recipeName": "Shrimp Scampi Pasta",
+    "recipeDescription": "A delicious pasta dish featuring linguine and shrimp tossed in a buttery, garlic wine sauce. A luxurious yet easy dinner option.",
+    "ingredients": [
+      "Linguine pasta",
+      "Shrimp, peeled and deveined"
+    ],
+    "instructions": [
+      "Cook linguine pasta according to package instructions.",
+      "Toss cooked linguine in the shrimp scampi sauce.",
+      "Garnish with chopped fresh parsley before serving."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/10.webp"
+  },
+  {
+    "country": "India",
+    "email": "arjun.patel@example.com",
+    "firstName": "Arjun",
+    "lastName": "Patel",
+    "recipeName": "Chicken Biryani",
+    "recipeDescription": "A fragrant and spicy rice dish with tender chicken pieces, infused with an array of spices and served with a side of yogurt. A beloved Indian classic.",
+    "ingredients": [
+      "Basmati rice",
+      "Chicken, cut into pieces"
+    ],
+    "instructions": [
+      "Marinate chicken with yogurt, ginger-garlic paste, and spices.",
+      "Layer marinated chicken and rice in a pot, cook until done.",
+      "Serve hot, garnished with coriander and mint."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/11.webp"
+  },
+  {
+    "country": "Pakistan",
+    "email": "sana.malik@example.com",
+    "firstName": "Sana",
+    "lastName": "Malik",
+    "recipeName": "Chicken Karahi",
+    "recipeDescription": "A popular Pakistani curry dish made with chicken, tomatoes, and a blend of spices, traditionally served in a wok-like pot called a Karahi.",
+    "ingredients": [
+      "Chicken, cut into pieces",
+      "Tomatoes, chopped"
+    ],
+    "instructions": [
+      "Sauté garlic until golden, add chicken and brown.",
+      "Add tomatoes and spices, cook until oil separates.",
+      "Garnish with coriander, serve with naan."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/12.webp"
+  },
+  {
+    "country": "Pakistan",
+    "email": "faizan.khan@example.com",
+    "firstName": "Faizan",
+    "lastName": "Khan",
+    "recipeName": "Aloo Keema",
+    "recipeDescription": "A comforting Pakistani dish made with ground beef and potatoes, spiced with ginger, garlic, and traditional spices, perfect for a family dinner.",
+    "ingredients": [
+      "Ground beef",
+      "Potatoes, peeled and diced"
+    ],
+    "instructions": [
+      "Sauté onions, add ginger-garlic paste, then the ground beef.",
+      "Add potatoes and spices, simmer until cooked.",
+      "Garnish with coriander, serve with rice or naan."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/13.webp"
+  },
+  {
+    "country": "Pakistan",
+    "email": "hassan.raza@example.com",
+    "firstName": "Hassan",
+    "lastName": "Raza",
+    "recipeName": "Chapli Kebabs",
+    "recipeDescription": "Spicy and tender ground beef or lamb kebabs, mixed with fresh herbs and spices, shallow-fried to perfection. A flavorful Pakistani street food.",
+    "ingredients": [
+      "Ground beef",
+      "Tomatoes, finely chopped"
+    ],
+    "instructions": [
+      "Mix meat with spices, onions, tomatoes, and herbs.",
+      "Form into kebabs, fry until golden on both sides.",
+      "Serve hot with mint chutney or naan."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/14.webp"
+  },
+  {
+    "country": "India",
+    "email": "priya.sharma@example.com",
+    "firstName": "Priya",
+    "lastName": "Sharma",
+    "recipeName": "Saag with Makki di Roti",
+    "recipeDescription": "A traditional North Indian dish of cooked mustard greens and spinach, served with cornmeal flatbreads. Hearty and nutritious.",
+    "ingredients": [
+      "Mustard greens, washed and chopped",
+      "Cornmeal (makki ka atta)"
+    ],
+    "instructions": [
+      "Boil greens, blend into a paste. Sauté with spices.",
+      "Knead cornmeal dough, make rotis.",
+      "Serve hot saag with makki di roti and butter."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/15.webp"
+  },
+  {
+    "country": "Japan",
+    "email": "hiroko.tanaka@example.com",
+    "firstName": "Hiroko",
+    "lastName": "Tanaka",
+    "recipeName": "Japanese Ramen Soup",
+    "recipeDescription": "A warm and savory ramen noodle soup with chicken broth, soy sauce, and toppings like bok choy, shiitake mushrooms, and grilled chicken. A staple of Japanese cuisine.",
+    "ingredients": [
+      "Ramen noodles",
+      "Chicken broth"
+    ],
+    "instructions": [
+      "Cook noodles; simmer broth with soy sauce and mirin.",
+      "Add vegetables; divide noodles into bowls, pour broth.",
+      "Top with green onions, eggs, chicken, and nori."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/16.webp"
+  },
+  {
+    "country": "Morocco",
+    "email": "amina.elmehdi@example.com",
+    "firstName": "Amina",
+    "lastName": "El Mehdi",
+    "recipeName": "Moroccan Chickpea Tagine",
+    "recipeDescription": "A fragrant and hearty Moroccan dish featuring chickpeas, tomatoes, and a blend of spices, slow-cooked in a traditional clay pot.",
+    "ingredients": [
+      "Chickpeas, cooked",
+      "Tomatoes, chopped"
+    ],
+    "instructions": [
+      "Sauté onions and garlic; add carrots, chickpeas, spices.",
+      "Pour in broth, simmer until carrots tender.",
+      "Garnish with cilantro, serve with couscous."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/17.webp"
+  },
+  {
+    "country": "Korea",
+    "email": "jong.min@example.com",
+    "firstName": "Jong",
+    "lastName": "Min",
+    "recipeName": "Korean Bibimbap",
+    "recipeDescription": "A colorful and nutritious Korean dish with a base of rice, topped with assorted vegetables, beef bulgogi, a fried egg, and spicy gochujang.",
+    "ingredients": [
+      "Cooked white rice",
+      "Beef bulgogi"
+    ],
+    "instructions": [
+      "Arrange rice in a bowl; top with beef, vegetables, and egg.",
+      "Drizzle with gochujang and sesame oil.",
+      "Mix before eating; customize with additional toppings."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/18.webp"
+  },
+  {
+    "country": "Greece",
+    "email": "nikos.georgiou@example.com",
+    "firstName": "Nikos",
+    "lastName": "Georgiou",
+    "recipeName": "Greek Moussaka",
+    "recipeDescription": "A layered dish with eggplants, spiced ground lamb or beef, topped with a creamy béchamel sauce, baked to golden perfection.",
+    "ingredients": [
+      "Eggplants, sliced",
+      "Ground lamb or beef"
+    ],
+    "instructions": [
+      "Sauté eggplants; cook meat with onions, garlic, spices.",
+      "Layer eggplants, meat, top with béchamel sauce.",
+      "Bake until golden; let cool before serving."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/19.webp"
+  },
+  {
+    "country": "India",
+    "email": "vijay.kumar@example.com",
+    "firstName": "Vijay",
+    "lastName": "Kumar",
+    "recipeName": "Butter Chicken (Murgh Makhani)",
+    "recipeDescription": "A creamy and rich tomato-based curry made with marinated chicken, butter, and cream, flavored with fenugreek leaves and Indian spices.",
+    "ingredients": [
+      "Chicken thighs, boneless and skinless",
+      "Tomato puree"
+    ],
+    "instructions": [
+      "Marinate chicken in spices and yogurt; cook in butter.",
+      "Add tomato puree, cream; simmer until chicken cooked.",
+      "Garnish with fenugreek, serve with rice or naan."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/20.webp"
+  },
+  {
+    "country": "Thailand",
+    "email": "suphawadee.kasem@example.com",
+    "firstName": "Suphawadee",
+    "lastName": "Kasem",
+    "recipeName": "Thai Green Curry",
+    "recipeDescription": "A spicy and aromatic curry made with green curry paste, coconut milk, and tender chicken pieces, infused with Thai basil and vegetables.",
+    "ingredients": [
+      "Chicken thighs, boneless and skinless",
+      "Green curry paste"
+    ],
+    "instructions": [
+      "Simmer green curry paste in coconut milk.",
+      "Add chicken, vegetables, and cook until tender.",
+      "Garnish with basil, serve over jasmine rice."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/21.webp"
+  },
+  {
+    "country": "India",
+    "email": "ananya.singh@example.com",
+    "firstName": "Ananya",
+    "lastName": "Singh",
+    "recipeName": "Mango Lassi",
+    "recipeDescription": "A refreshing and creamy yogurt-based drink blended with ripe mango and a hint of cardamom, perfect for cooling down on a hot day.",
+    "ingredients": [
+      "Ripe mango, peeled and diced",
+      "Yogurt"
+    ],
+    "instructions": [
+      "Blend mango, yogurt, milk, honey, and cardamom.",
+      "Add ice, blend until chilled.",
+      "Serve garnished with cardamom."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/22.webp"
+  },
+  {
+    "country": "Italy",
+    "email": "giorgia.bianchi@example.com",
+    "firstName": "Giorgia",
+    "lastName": "Bianchi",
+    "recipeName": "Italian Tiramisu",
+    "recipeDescription": "A rich and creamy dessert layered with espresso-soaked ladyfingers and a light mascarpone cream, dusted with cocoa powder.",
+    "ingredients": [
+      "Espresso, brewed and cooled",
+      "Mascarpone cheese"
+    ],
+    "instructions": [
+      "Whip cream, mix with mascarpone and sugar.",
+      "Layer espresso-soaked ladyfingers and cream mixture.",
+      "Chill, dust with cocoa before serving."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/23.webp"
+  },
+  {
+    "country": "Turkey",
+    "email": "mehmet.ozturk@example.com",
+    "firstName": "Mehmet",
+    "lastName": "Ozturk",
+    "recipeName": "Turkish Kebabs",
+    "recipeDescription": "Juicy and flavorful grilled kebabs made with ground lamb or beef, seasoned with a blend of spices, and served with flatbread and tahini sauce.",
+    "ingredients": [
+      "Ground lamb or beef",
+      "Parsley, finely chopped"
+    ],
+    "instructions": [
+      "Mix meat with onions, garlic, spices, and herbs.",
+      "Grill until cooked, serve on flatbread with tahini.",
+      "Enjoy with your choice of sides."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/24.webp"
+  },
+  {
+    "country": "United States",
+    "email": "emily.thompson@example.com",
+    "firstName": "Emily",
+    "lastName": "Thompson",
+    "recipeName": "Blueberry Banana Smoothie",
+    "recipeDescription": "A healthy and delicious smoothie made with fresh blueberries, banana, Greek yogurt, and almond milk, sweetened with honey.",
+    "ingredients": [
+      "Blueberries, fresh or frozen",
+      "Banana, peeled and sliced"
+    ],
+    "instructions": [
+      "Combine all ingredients in a blender.",
+      "Blend until smooth.",
+      "Serve immediately, enjoy!"
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/25.webp"
+  },
+  {
+    "country": "Mexico",
+    "email": "carlos.jimenez@example.com",
+    "firstName": "Carlos",
+    "lastName": "Jimenez",
+    "recipeName": "Mexican Street Corn (Elote)",
+    "recipeDescription": "Grilled corn on the cob smothered with mayonnaise, coated with crumbled Cotija cheese, and sprinkled with chili powder, served with lime.",
+    "ingredients": [
+      "Corn on the cob",
+      "Cotija cheese, crumbled"
+    ],
+    "instructions": [
+      "Grill corn until charred.",
+      "Brush with mayonnaise, sprinkle cheese and chili powder.",
+      "Serve with lime wedges."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/26.webp"
+  },
+  {
+    "country": "Russia",
+    "email": "olga.ivanova@example.com",
+    "firstName": "Olga",
+    "lastName": "Ivanova",
+    "recipeName": "Russian Borscht",
+    "recipeDescription": "A hearty and colorful beet soup with cabbage, potatoes, and beef or vegetable broth, served with a dollop of sour cream.",
+    "ingredients": [
+      "Beets, peeled and shredded",
+      "Cabbage, shredded"
+    ],
+    "instructions": [
+      "Sauté onions, garlic, add vegetables and broth.",
+      "Simmer until tender.",
+      "Serve with sour cream."
+    ],
+    "imageURL": "https://cdn.dummyjson.com/recipe-images/27.webp"
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+]
+      
+  

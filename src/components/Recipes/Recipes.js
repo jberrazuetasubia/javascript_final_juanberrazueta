@@ -147,7 +147,16 @@ function Recipes() {
 
 
 
+
+
+
       <div className="recipe-cards">
+
+
+
+
+
+
         {filteredRecipes.length > 0 ? (
           filteredRecipes.map((recipe, index) => (
             <div className="recipe-card" key={index}>
@@ -201,20 +210,26 @@ function Recipes() {
         >
           <Box className="box">
             <div className='boxContent'>
-              <h2 className='titleBox'>{selectedRecipe && selectedRecipe.recipeName}</h2>
-              <p><strong>Ingredients:</strong></p>
-              <ul>
-                {selectedRecipe && selectedRecipe.ingredients.map((ingredient, i) => (
-                  <li key={i}>{ingredient}</li>
-                ))}
-              </ul>
-              <p><strong>Instructions:</strong> </p>
-              <ul>
-                {selectedRecipe &&
-                  selectedRecipe.instructions.map((instruction, i) => <li key={i}>{instruction}</li>)}
-              </ul>
 
-              <img className='recipeImage' src={selectedRecipe && selectedRecipe.imageURL} alt={selectedRecipe && selectedRecipe.recipeName} />
+              <div style={{flex: 1, marginLeft: 20, marginBottom: 30}}> 
+                <h2 className='titleBox'>{selectedRecipe && selectedRecipe.recipeName}</h2>
+                <p><strong>Ingredients:</strong></p>
+                <ul>
+                  {selectedRecipe && selectedRecipe.ingredients.map((ingredient, i) => (
+                    <li key={i}>{ingredient}</li>
+                  ))}
+                </ul>
+                <p><strong>Instructions:</strong> </p>
+                <ul>
+                  {selectedRecipe &&
+                    selectedRecipe.instructions.map((instruction, i) => <li key={i}>{instruction}</li>)}
+                </ul>
+              </div>
+
+              <div style={{flex: 1, width: "100%", marginLeft: 20  }}>
+                <img className='recipeImage' src={selectedRecipe && selectedRecipe.imageURL} alt={selectedRecipe && selectedRecipe.recipeName} />
+              </div>
+
             </div>
 
           </Box>

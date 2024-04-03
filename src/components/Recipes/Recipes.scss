@@ -67,7 +67,6 @@
   margin: 10px;
   width: calc(33.33% - 20px);
   box-sizing: border-box;
-
   .recipeImage{
     width: 70%;
     text-align: center;
@@ -108,10 +107,10 @@
 
 .box {
   position: absolute;
-  top: 50%;
+  top: 60px;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
+  width: 600px;
   background: #f9f9f9;
   border-radius: 10px;
   box-shadow: 24;
@@ -139,23 +138,29 @@
 #mySidenav {
   #tryNew {
     position: fixed; 
-    right: -60px; 
+    right: 10px; 
+    bottom: 10px;
     transition: 0.3s; 
     padding: 15px; 
-    height: 25%;
+    height: 20%;
+    width: 15%;
     min-height: 5%;
     text-decoration: none; 
-    font-size: calc(12px + 0.5vw);
+    font-size: calc(12px + 0.2vw);
     color: white; 
     border-radius: 50%; 
     background-color: rgba(0, 128, 0, 0.265);
     z-index: 1000; 
     &:hover {
       right: 100px;
+      bottom: 50px;
       transform: scale(1.2);
     background-color: green;
 
     }
+
+
   
   }
+ 
 }

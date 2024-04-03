@@ -21,7 +21,8 @@ function SendRecipe() {
     const [email, setEmail] = useState('');
     const [country, setCountry] = useState('');
     const [recipeName, setRecipeName] = useState(['']);
-    const [recipeSteps, setRecipeSteps] = useState(['']);
+    const [recipeDescription, setRecipeDescription] = useState(['']);
+    const [instructionsSet, setInstructions] = useState(['']);
     const [ingredientsSet, setIngredients] = useState(['']);
     const [recipeImage, setRecipeImage] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -33,7 +34,8 @@ function SendRecipe() {
         setEmail('');
         setCountry('');
         setRecipeName('');
-        setRecipeSteps(['']);
+        setRecipeDescription('');
+        setInstructions(['']);
         setIngredients(['']);
         setRecipeImage(null);
     };
@@ -53,11 +55,12 @@ function SendRecipe() {
             firstName: firstName,
             lastName: lastName,
             email: email,
-            country: country,
+            country: country.label,
             recipeName: recipeName,
-            recipeSteps: recipeSteps,
+            recipeDescription: recipeDescription,
+            instructions: instructionsSet,
             ingredients: ingredientsSet,
-            recipeImage: imageUrl,
+            imageURL: imageUrl,
         };
 
         try {
@@ -86,14 +89,14 @@ function SendRecipe() {
         setIngredients([...ingredientsSet, '']);
     }
 
-    const handleStepChange = (index, value) => {
-        const steps = [...recipeSteps];
-        steps[index] = value;
-        setRecipeSteps(steps);
+    const handleInstructionsChange = (index, value) => {
+        const instructions = [...instructionsSet];
+        instructions[index] = value;
+        setInstructions(instructions);
     };
 
     const addStepField = () => {
-        setRecipeSteps([...recipeSteps, '']);
+        setInstructions([...instructionsSet, '']);
     };
 
     const handleFileChange = (event) => {
@@ -174,7 +177,17 @@ function SendRecipe() {
                             </div>
 
                         </Stack>
-                       
+                        <h3 style={{ textAlign: "left" }}>Write the recipe description</h3>
+                                <TextField
+                                    type="text"
+                                    variant='outlined'
+                                    color='success'
+                                    label="Name of recipe"
+                                    onChange={e => setRecipeDescription(e.target.value)}
+                                    value={recipeDescription}
+                                    fullWidth
+                                    required
+                                />
                         <div style={{ marginTop: "20px" }}>
                             <h4 style={{ textAlign: "left" }}>List all your ingredients!</h4>
                             {ingredientsSet.map((ingredient, index) => (
@@ -197,23 +210,23 @@ function SendRecipe() {
                         </div>
                     </div>
                     <div className="flexItem">
-                        <h3 style={{ textAlign: "left" }}>Write all the steps!</h3>
-                        {recipeSteps.map((step, index) => (
+                        <h3 style={{ textAlign: "left" }}>Write all the instructions!</h3>
+                        {instructionsSet.map((instructions, index) => (
                             <TextField
                                 key={index}
                                 type="text"
                                 variant="outlined"
                                 color="success"
-                                label={`Step ${index + 1}`}
-                                onChange={(e) => handleStepChange(index, e.target.value)}
-                                value={step}
+                                label={`Instructions ${index + 1}`}
+                                onChange={(e) => handleInstructionsChange(index, e.target.value)}
+                                value={instructions}
                                 fullWidth
                                 required
                                 sx={{ mb: 2 }}
                             />
                         ))}
                         <Button className='add' variant="outlined" color="success" onClick={addStepField}>
-                            Add Step
+                            Add new step
                         </Button>
                         <h3 style={{ textAlign: "left" }}>Upload your recipe photo!</h3>
                         <div style={{ textAlign: "left" }}>

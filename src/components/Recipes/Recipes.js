@@ -88,6 +88,15 @@ function Recipes() {
   };
 
 
+  const truncateDescription = (description) => {
+    let words = description.split(' ');
+    if (words.length > 30) {
+      return words.slice(0, 30).join(' ') + '...';
+    } else {
+      return description;
+    }
+  };
+
   const modalVariants = {
     hidden: { y: '100vh', opacity: 0 },
     visible: { y: '50vh', opacity: 1, transition: { type: 'spring', stiffness: 50 } },
@@ -113,7 +122,6 @@ function Recipes() {
       </div>
 
 
-
       <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }} style={{ textAlign: "left" }}>
         <div style={{ marginLeft: 10 }}>
           <h2>Select Country:</h2>
@@ -124,6 +132,7 @@ function Recipes() {
           <h2 style={{ textAlign: 'left' }}>Search by your favorite ingredient:</h2>
 
           <TextField
+            style={{ width: 300 }}
             value={searchTerm}
             onChange={handleSearchTermChange}
             label="Search by ingredient"
@@ -146,7 +155,7 @@ function Recipes() {
               <p><strong>Country:</strong> {recipe.country}</p>
               <p><strong>Email:</strong> {recipe.email}</p>
               <p><strong>Name:</strong> {recipe.firstName} {recipe.lastName}</p>
-              <p><strong>Description:</strong> {recipe.recipeDescription}</p>
+              <p> {truncateDescription(recipe.recipeDescription)}</p>
 
               <div>
                 <img className='recipeImage' src={recipe.imageURL} alt={recipe.recipeName} />

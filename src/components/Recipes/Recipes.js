@@ -117,11 +117,15 @@ function Recipes() {
       </motion.h1>
 
 
-      <div id="mySidenav" class="sidenav">
-        <Button id='tryNew' onClick={handleRandomRecipe}>Try something new!</Button>
-      </div>
+      {/* button random recipes */}
+      <a onClick={handleRandomRecipe} class="mySidenav">
+        <svg className='tryNew' width="200" height="200">
+          <circle className='circle' />
+          <text x="100" y="100" text-anchor="middle" fill="white">Random Recipe</text>
+        </svg>
+      </a>
 
-
+      {/* Search boxes / filters */}
       <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }} style={{ textAlign: "left" }}>
         <div style={{ marginLeft: 10 }}>
           <h2>Select Country:</h2>
@@ -145,17 +149,8 @@ function Recipes() {
 
 
 
-
-
-
-
-
+      {/* Recipe cards */}
       <div className="recipe-cards">
-
-
-
-
-
 
         {filteredRecipes.length > 0 ? (
           filteredRecipes.map((recipe, index) => (
@@ -169,7 +164,6 @@ function Recipes() {
               <div>
                 <img className='recipeImage' src={recipe.imageURL} alt={recipe.recipeName} />
               </div>
-
 
               <Button className='recipeButton' autocomplete="false" variant="outlined" onClick={() => handleRecipeDetails(recipe)}>View Details</Button>
             </div>
@@ -211,7 +205,7 @@ function Recipes() {
           <Box className="box">
             <div className='boxContent'>
 
-              <div style={{flex: 1, marginLeft: 20, marginBottom: 30}}> 
+              <div style={{ flex: 1, marginLeft: 20, marginBottom: 30 }}>
                 <h2 className='titleBox'>{selectedRecipe && selectedRecipe.recipeName}</h2>
                 <p><strong>Ingredients:</strong></p>
                 <ul>
@@ -226,7 +220,7 @@ function Recipes() {
                 </ul>
               </div>
 
-              <div style={{flex: 1, width: "100%", marginLeft: 20  }}>
+              <div style={{ flex: 1, width: "100%", marginLeft: 20 }}>
                 <img className='recipeImage' src={selectedRecipe && selectedRecipe.imageURL} alt={selectedRecipe && selectedRecipe.recipeName} />
               </div>
 

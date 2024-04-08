@@ -34,6 +34,8 @@ function Recipes() {
 
   const [searchTerm, setSearchTerm] = useState('');
 
+
+  
   useEffect(() => {
     const fetchRecipes = async () => {
       const recipesCollection = collection(db, 'recipes');
@@ -126,26 +128,30 @@ function Recipes() {
       </a>
 
       {/* Search boxes / filters */}
-      <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }} style={{ textAlign: "left" }}>
-        <div style={{ marginLeft: 10 }}>
-          <h2>Select Country:</h2>
-          <CountrySelect value={selectedCountry} onCountrySelect={handleCountrySelect} />
+      <div className='searchContainer'>
+        <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }} style={{ textAlign: "left" }}>
+          <div style={{ marginLeft: 10 }}>
+            <h2>Select Country:</h2>
+            <CountrySelect value={selectedCountry} onCountrySelect={handleCountrySelect} />
 
-        </div>
-        <div style={{ marginLeft: 20 }}>
-          <h2 style={{ textAlign: 'left' }}>Search by your favorite ingredient:</h2>
+          </div>
+          <div style={{ marginLeft: 20 }}>
+            <h2 style={{ textAlign: 'left' }}>Search by your favorite ingredient:</h2>
 
-          <TextField
-            style={{ width: 300 }}
-            value={searchTerm}
-            onChange={handleSearchTermChange}
-            label="Search by ingredient"
-            color='success'
-            variant="outlined"
-          />
-        </div>
+            <TextField
+              style={{ width: 300 }}
+              value={searchTerm}
+              onChange={handleSearchTermChange}
+              label="Search by ingredient"
+              color='success'
+              variant="outlined"
+            />
+          </div>
 
-      </Stack>
+        </Stack>
+      </div>
+      
+
 
 
 

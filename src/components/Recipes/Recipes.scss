@@ -16,7 +16,13 @@
   }
 
 }
+.searchContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 
+}
 .recipe-cards {
   display: flex;
   flex-wrap: wrap;
@@ -58,7 +64,7 @@
   }
 
   .recipe-card {
-    flex: 0 1 calc(30% - 20px); // Adjust card width and spacing for responsiveness
+    flex:  1 calc(33% - 20px); // Adjust card width and spacing for responsiveness
     margin: 10px;
     padding: 20px;
     box-sizing: border-box;
@@ -72,6 +78,8 @@
       width: 100%;
       text-align: center;
       border-radius: 5px;
+      object-fit: cover;
+height: 100%;
     }
 
     .recipeButton {

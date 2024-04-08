@@ -114,7 +114,7 @@ function SendRecipe() {
             >
                 Send your recipe!
             </motion.h1>
-            <form onSubmit={handleSubmit} action={<Link to="/login" />} className='form'>
+            <form onSubmit={handleSubmit} className='form'>
                 <div className="flexContainer">
                     <div className="flexItem">
                         <h2>Tell us about yourself!</h2>
@@ -153,16 +153,11 @@ function SendRecipe() {
                         />
                         <h2>Write your recipe</h2>
                         <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
-                            <div
-                                style={{ width: "100%" }}
-                            >
+                            <div style={{ width: "100%" }} >
                                 <h3 style={{ textAlign: "left" }}>Where it is from?</h3>
-                                <CountrySelect style={{ width: "100%" }} key={country} onCountrySelect={handleCountrySelect} />
-
+                                <CountrySelect value={country} onCountrySelect={handleCountrySelect} />
                             </div>
-                            <div
-                                style={{ width: "100%" }}
-                            >
+                            <div  style={{ width: "100%" }} >
                                 <h3 style={{ textAlign: "left" }}>What is the name of the dish?</h3>
                                 <TextField
                                     type="text"
@@ -244,13 +239,16 @@ function SendRecipe() {
                             />
                         </div>
                         {loading ? (
-                            <CircularProgress color="success" />
+                            <div className='loaderContainer'>
+                            <CircularProgress className='progress' color="success" />
+                            </div>
                         ) : (
                             <Button className='submitButton' variant="outlined" color="success" type="submit">Send the recipe</Button>
                         )}
                         {successMessage && (
                             <p style={{ color: 'green' }}>{successMessage}</p>
                         )}
+                          
                     </div>
                 </div>
             </form>

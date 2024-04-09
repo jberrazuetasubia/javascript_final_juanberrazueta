@@ -1,7 +1,10 @@
-// Header.js
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link, NavLink } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { IconButton } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import './Header.scss';
 
 import './Header.scss';
 
@@ -17,44 +20,40 @@ function Header() {
       <div className="container">
         <div className="logo">
           <Link to="/">
-            <img className='logo' src="favicon.ico" />
+            <img className="logo" src="favicon.ico" alt="Logo" />
           </Link>
-
         </div>
         <div className="menu-toggle" onClick={toggleMenu}>
-          <div className={`hamburger ${isOpen ? 'open' : ''}`}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          {isOpen ? (
+            <IconButton color="inherit" aria-label="close menu">
+              <CloseIcon />
+            </IconButton>
+          ) : (
+            <IconButton color="inherit" aria-label="open menu">
+              <MenuIcon />
+            </IconButton>
+          )}
         </div>
         <nav className={`menu ${isOpen ? 'open' : ''}`}>
           <ul>
             <li>
-              <NavLink to="/" className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
-              }>Home</NavLink>
+              <NavLink to="/" activeClassName="active">
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/recipes" className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
-              } >Recipes</NavLink>
+              <NavLink to="/recipes" activeClassName="active">
+                Recipes
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/about-us"  className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
-              } >About Us</NavLink>
+              <NavLink to="/about-us" activeClassName="active">
+                About Us
+              </NavLink>
             </li>
-
-            <div >
-              <li >
-                <NavLink to="/send-recipe" ><Button className='recipeButton'>
-                  Send your recipe
-                </Button>
-                </NavLink>
-              </li>
-            </div>
-
+            <li>
+              <NavLink className="sendRecipe" to="/send-recipe">Send your recipe</NavLink>
+            </li>
           </ul>
         </nav>
       </div>

@@ -1,144 +1,89 @@
-// Header.scss
-.header {
+/* Header.scss */
 
-  color: #000000;
-  padding: 30px 0;
-  background-color: white;
+.header {
+  background-color: #ffffff;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .logo {
-    height: 50px;
-    transition: transform 0.3s ease; // Add transition for transform
-
-  }
-
-  .logo:hover {
-    transform: scale(1.1);
-  }
-
-  .menu-toggle {
-    display: none;
-    cursor: pointer;
-
-    .hamburger {
-      display: flex;
-      flex-direction: column;
-
-      span {
-        height: 3px;
-        width: 25px;
-        background-color: #fff;
-        margin-bottom: 5px;
-        transition: transform 0.3s ease;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-
-      &.open {
-        span:first-child {
-          transform: translateY(8px) rotate(45deg);
-        }
-
-        span:nth-child(2) {
-          opacity: 0;
-        }
-
-        span:last-child {
-          transform: translateY(-8px) rotate(-45deg);
-        }
-      }
-    }
-
-    @media (max-width: 768px) {
-      display: block;
-    }
-  }
-
-  .menu {
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
 
-    a.active {
-      font-weight: bold;
-      color: #28a745;
+    .logo {
+      max-width: 20%;
+      min-width: 10%;
     }
 
-    .recipeButton {
-      border: 2px solid #28a745;
-      padding: 10px 20px;
-      border-radius: 5px;
-      margin-left: 25px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      color: green;
-      transition: transform 0.3s ease;
+    .menu-toggle {
+      display: none; // Hide by default for larger screens
 
-      &:hover {
-        background-color: #28a745;
-        color: white;
-        transform: scale(1.1);
+      @media (max-width: 768px) {
+        display: block; // Show toggle button for smaller screens
       }
-
     }
 
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-
-      li {
-        white-space: nowrap;
-        cursor: pointer;
-        margin-left: 20px;
+    .menu {
+      ul {
+        list-style-type: none;
+        margin: 0;
         margin-right: 20px;
+        padding: 0;
+        display: flex;
 
-        a {
-          color: #000000;
-          text-decoration: none;
-          transition: color 0.3s ease;
+        li {
+          margin-right: 20px;
 
-          &:hover {
-            color: green;
+          &:last-child {
+            margin-right: 0;
+          }
+
+          a {
+            text-decoration: none;
+            color: #333333;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: green;
+            }
+
+            &.active {
+              color: green;
+            }
           }
         }
 
-      }
-    }
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: #333;
-      padding: 10px 0;
-      z-index: 999;
-      display: none;
-
-      &.open {
-        display: flex;
+        .sendRecipe {
+          background-color: green;
+          color: white !important;
+          padding: 10px 20px;
+          border-radius: 5px;
+          text-decoration: none;
+          transition: background-color 0.3s ease;
+        }
       }
 
-      ul {
-        text-align: center;
+      @media (max-width: 768px) {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: none; // Hide menu by default for smaller screens
 
-        li {
-          display: block;
-          margin: 15px 0;
+        &.open {
+          display: block; // Show menu when open
+          z-index: 9999;
+        }
+
+        ul {
+          flex-direction: column;
+          padding: 20px;
+
+          li {
+            margin: 25px 0;
+          }
         }
       }
     }

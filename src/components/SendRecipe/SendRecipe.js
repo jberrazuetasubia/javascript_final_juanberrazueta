@@ -8,7 +8,6 @@ import {
   IconButton,
   CircularProgress,
 } from "@mui/material";
-import { Link } from "react-router-dom";
 import CountrySelect from "./CountryComponent";
 import "./SendRecipe.scss";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";

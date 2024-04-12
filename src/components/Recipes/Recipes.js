@@ -4,14 +4,13 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
-import { Stack } from '@mui/material';
-
-import './Recipes.scss';
 import { Link } from 'react-router-dom';
 
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import firebaseConfig from '../../database/firebase_config';
+
+import './Recipes.scss';
 
 
 import CountrySelect from '../SendRecipe/CountryComponent';
@@ -34,8 +33,9 @@ function Recipes() {
 
   const [searchTerm, setSearchTerm] = useState('');
 
+  const [loading, setLoading] = useState(true);
 
-  
+
   useEffect(() => {
     const fetchRecipes = async () => {
       const recipesCollection = collection(db, 'recipes');
@@ -108,7 +108,6 @@ function Recipes() {
   return (
     <div className="recipe-container">
 
-
       <motion.h1
         whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.9 }}
@@ -117,7 +116,6 @@ function Recipes() {
       >
         Find your recipe!
       </motion.h1>
-
 
       {/* button random recipes */}
       <a onClick={handleRandomRecipe} class="mySidenav">
@@ -129,17 +127,15 @@ function Recipes() {
 
       {/* Search boxes / filters */}
       <div className='searchContainer'>
-        <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }} style={{ textAlign: "left" }}>
-          <div style={{ marginLeft: 10 }}>
+        <div className='stackContainer'>
+          <div className='countrySection'>
             <h2>Select Country:</h2>
             <CountrySelect value={selectedCountry} onCountrySelect={handleCountrySelect} />
-
           </div>
-          <div style={{ marginLeft: 20 }}>
-            <h2 style={{ textAlign: 'left' }}>Search by your favorite ingredient:</h2>
-
+          <div className='searchSection'>
+            <h2>Search by ingredient:</h2>
             <TextField
-              style={{ width: 300 }}
+              className='ingredientInput'
               value={searchTerm}
               onChange={handleSearchTermChange}
               label="Search by ingredient"
@@ -147,13 +143,8 @@ function Recipes() {
               variant="outlined"
             />
           </div>
-
-        </Stack>
+        </div>
       </div>
-      
-
-
-
 
       {/* Recipe cards */}
       <div className="recipe-cards">
@@ -211,7 +202,7 @@ function Recipes() {
           <Box className="box">
             <div className='boxContent'>
 
-              <div style={{ flex: 1, marginLeft: 20, marginBottom: 30 }}>
+              <div className='flex1' >
                 <h2 className='titleBox'>{selectedRecipe && selectedRecipe.recipeName}</h2>
                 <p><strong>Ingredients:</strong></p>
                 <ul>
@@ -226,7 +217,7 @@ function Recipes() {
                 </ul>
               </div>
 
-              <div style={{ flex: 1, width: "100%", marginLeft: 20 }}>
+              <div className='flex2' >
                 <img className='recipeImage' src={selectedRecipe && selectedRecipe.imageURL} alt={selectedRecipe && selectedRecipe.recipeName} />
               </div>
 

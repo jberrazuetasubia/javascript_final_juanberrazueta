@@ -2,44 +2,56 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-.hero {
-  text-align: center;
-  h1 {
-    color: green;
+  .hero {
+    text-align: center;
+    h1 {
+      margin-top: 50px;
+      font-size: 3.5rem;
+      
+      color: green;
+    }
   }
-}
 
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-}
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 
-.column {
-  flex: 1;
-  padding: 20px;
-  margin: 10px;
-  width: 100%;
-}
+    .column {
+      flex: 1;
+      padding: 20px;
+      margin: 10px;
+      width: 100%;
 
-.column h2 {
-  font-size: 1.5rem;
-}
+      h2 {
+        font-size: 2.5rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+        color: green;
+      }
+      p {
+        font-size: 1.5rem;
+      }
 
-.column p {
-  font-size: 1.5rem;
-}
+      .juanPic {
+        width: 100%; // Adjusted width to fit smaller screens
+        max-width: 400px; // Added max-width to prevent oversized images on smaller screens
+        border-radius: 10px;
+      }
+    }
+  }
 
-.juanPic{
-  width: 70%;
-border-radius: 10px;
-}
+  @media screen and (max-width: 768px) {
+    .content {
+      flex-direction: column; // Stack columns on top of each other on smaller screens
 
-@media screen and (max-width: 768px) {
-  .column {
-    max-width: 100%;
+      .column {
+        width: 90%; // Adjusted width to fit smaller screens
+        max-width: 100%; // Ensure content doesn't overflow
+      }
+    }
   }
 }

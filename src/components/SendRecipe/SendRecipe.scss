@@ -65,16 +65,30 @@
 }
 
 .add {
-  width: 100%; /* Adjust width for responsiveness */
-  height: 50px;
-}
-
-.submitButton {
-  margin-top: 50px;
-  width: 100%;
+  width: 90%;
   background-color: green;
   color: white;
   height: 50px;
+  transition: all 0.3s ease !important;
+  &:hover {
+    background-color: green !important;
+    color: white;
+    transform: scale(1.1);
+  }
+}
+
+.submitButton {
+  margin-top: 50px !important;
+  width: 90%;
+  background-color: green;
+  color: white;
+  height: 50px;
+  transition: all 0.3s ease !important;
+  &:hover {
+    background-color: green !important;
+    color: white;
+    transform: scale(1.1);
+  }
 }
 
 @media screen and (min-width: 768px) {

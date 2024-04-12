@@ -1,9 +1,8 @@
 import React from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import "./AboutUs.scss";
-function AboutUs() {
-  const controls = useAnimation();
 
+function AboutUs() {
   return (
     <div className="home">
       <div className="hero">
@@ -19,12 +18,18 @@ function AboutUs() {
         <div className="column">
           <h2>Panita Food</h2>
           <p>
-           Panita Food is a personal project to help people to find the best recipe for their daily meal. We provide a lot of recipe from all over the world. We also provide the information about the nutrition of the recipe. We hope that this project can help people to find the best recipe for their daily meal.
+            Panita Food is a personal project to help people find the best recipes for their daily meals. We provide a variety of recipes from all over the world along with nutritional information. Our goal is to assist people in discovering the perfect recipe for their daily meals.
           </p>
+          <p>
+            I have created Panita Food beacuse I had a need to search for a new easy recipes, as an international student has been hard to find the right recipe for my daily meals.     
+            
+          </p>
+          <h3>I hope you enjoy the recipes and find the perfect one for you. </h3>
+
         </div>
         <div className="column">
-          <h2>I'm Juanfer an Ecuadorian in Canada!</h2>
-          <img className="juanPic" src="profilePicture.jpg"/>
+          <h2>I'm Juanfer, an Ecuadorian in Canada!</h2>
+          <img className="juanPic" src="profilePicture.jpg" alt="Juanfer's Profile" />
         </div>
       </div>
     </div>

@@ -19,10 +19,36 @@
 
 .searchContainer {
   display: flex;
-  align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  margin-top: 30px;
 
+  .stackContainer {
+    margin-bottom: 4rem; // Adjust margin as needed
+    text-align: center;
+
+    @media (min-width: 600px) {
+      display: flex;
+      flex-direction: row;
+
+      .searchSection {
+        margin-left: 2rem; // Adjust margin as needed
+        margin-bottom: 0;
+      }
+    }
+
+    .countrySection {
+      margin-left: 0;
+      margin-bottom: 2rem; // Adjust margin as needed
+    }
+  }
+
+  .ingredientInput {
+    width: 100%;
+
+    @media (min-width: 600px) {
+      width: 300px; // Adjust width as needed
+    }
+  }
 }
 
 .recipe-cards {
@@ -31,6 +57,7 @@
   justify-content: center;
   align-items: center;
   max-width: 90%;
+  margin: 0 auto;
 
   .noFoundContainer {
     margin-top: 10%;
@@ -71,12 +98,12 @@
     margin: 20px;
     padding: 20px;
     box-sizing: border-box;
-    min-height: 850px;
+    min-height: 800px;
     transition: all 0.3s ease;
     background-color: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    max-width: 600px;
+    max-width: 550px;
 
     .recipeImage {
       width: 100%;
@@ -146,6 +173,18 @@
     display: flex;
     width: 100%;
 
+    .flex1 {
+      flex: 1;
+      margin-left: 20px;
+      margin-bottom: 30px
+    }
+
+    .flex2 {
+      flex: 1;
+      margin-left: 20;
+      margin-bottom: 30
+    }
+
     .titleBox {
       font-size: 40px;
       font-weight: 700;
@@ -163,41 +202,79 @@
       object-fit: cover;
     }
   }
-}
 
-.mySidenav {
-  .tryNew {
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    transition: 0.3s;
-    padding: 15px;
-    text-decoration: none;
-    font-size: calc(12px + 0.2vw);
-    z-index: 1000;
+  @media screen and (max-width: 768px) {
 
-    .circle {
-      fill: rgba(0, 128, 0, 0.696);
-      cx: 100;
-      cy: 100;
-      r: 80
-    }
+    /* Adjust layout for medium-sized screens */
+    .boxContent {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      .flex1 {
+        flex: 1;
+        margin-left: 20px;
+        margin-bottom: 30px;
+        margin-right: 20px;
+      }
 
-    &:hover {
-      right: 100px;
-      bottom: 50px;
-      transform: scale(1.2);
-      fill: green;
+      .flex2 {
+        flex: 1;
+        margin-left: 20;
+        margin-bottom: 30
+      }
 
-      .circle:hover {
-        fill: green;
+      .titleBox {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: green;
+        text-align: center;
+
+      }
+
+      .recipeImage {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        border-radius: 0 0 10px 10px;
+        object-fit: cover;
       }
     }
+  }
+}
+  .mySidenav {
+    .tryNew {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      transition: 0.3s;
+      padding: 15px;
+      text-decoration: none;
+      font-size: calc(12px + 0.2vw);
+      z-index: 1000;
+
+      .circle {
+        fill: rgba(0, 128, 0, 0.696);
+        cx: 100;
+        cy: 100;
+        r: 80
+      }
+
+      &:hover {
+        right: 100px;
+        bottom: 50px;
+        transform: scale(1.2);
+        fill: green;
+
+        .circle:hover {
+          fill: green;
+        }
+      }
 
 
 
 
+
+    }
 
   }
-
-}

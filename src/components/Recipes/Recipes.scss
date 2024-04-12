@@ -30,6 +30,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  max-width: 90%;
 
   .noFoundContainer {
     margin-top: 10%;
@@ -66,7 +67,7 @@
   }
 
   .recipe-card {
-    flex: 1 calc(30% - 20px); 
+    flex: 1 calc(30% - 20px);
     margin: 20px;
     padding: 20px;
     box-sizing: border-box;
@@ -75,6 +76,7 @@
     background-color: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    max-width: 600px;
 
     .recipeImage {
       width: 100%;

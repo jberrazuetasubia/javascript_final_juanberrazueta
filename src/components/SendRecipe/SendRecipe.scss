@@ -50,7 +50,6 @@
   justify-content: center; /* Center the flex container horizontally */
   margin-left: 2%;
   height: 100%;
-  max-width: 90%;
 }
 
 .flexItem {
@@ -62,7 +61,7 @@
 
 .form {
   margin: 0 auto;
-  
+  max-width: 80%;
 }
 
 .add {

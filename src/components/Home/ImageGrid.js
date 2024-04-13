@@ -23,7 +23,7 @@ export default function ImageGrid() {
         return (
           <ImageListItem key={item.img} cols={cols} rows={rows}>
             <img
-              {...srcset(item.img, 300, 150, rows, cols)}
+              {...srcset(item.img, 150, 150, rows, cols)}
               alt={item.title}
               loading="lazy"
             />
@@ -43,32 +43,26 @@ const itemData = [
   {
     img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
     title: 'Breakfast',
-    author: '@bkristastucchio',
     featured: true,
   },
   {
     img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
     title: 'Burger',
-    author: '@rollelflex_graphy726',
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
-    author: '@helloimnik',
+    img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38',
+    title: 'pizza',
   },
   {
     img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
     title: 'Coffee',
-    author: '@nolanissac',
   },
   {
     img: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe',
     title: 'Salad',
-    author: '@hjrc33',
   },
   {
     img: 'https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f',
     title: 'Fries',
-    author: '@arwinneil',
   }
 ];

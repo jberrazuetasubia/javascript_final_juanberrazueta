@@ -127,7 +127,7 @@ function SendRecipe() {
       </motion.h1>
       <form onSubmit={handleSubmit} className="form">
         <div className="flexContainer">
-          <div className="flexItem">
+          <div className="flexItem1">
             <h2>Tell us about yourself!</h2>
             <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
               <TextField
@@ -226,7 +226,7 @@ function SendRecipe() {
               </Button>
             </div>
           </div>
-          <div className="flexItem">
+          <div className="flexItem2">
             <h3 style={{ textAlign: "left" }}>Write all the instructions!</h3>
             {instructionsSet.map((instructions, index) => (
               <TextField

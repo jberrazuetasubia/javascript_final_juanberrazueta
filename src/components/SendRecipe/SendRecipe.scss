@@ -52,7 +52,13 @@
   height: 100%;
 }
 
-.flexItem {
+.flexItem1 {
+  flex: 1 1 100%; /* Adjust flex property for responsiveness */
+  max-width: 100%;
+  padding: 1%;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+.flexItem2 {
   flex: 1 1 100%; /* Adjust flex property for responsiveness */
   max-width: 100%;
   padding: 1%;
@@ -91,11 +97,20 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   /* Adjust layout for medium-sized screens */
-  .flexItem {
-    flex: 1 1 calc(50% - 2%);
-    max-width: calc(50% - 2%);
+  .flexContainer{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+  }
+  .flexItem1 {
+    flex: 1;
+    
+  }
+  .flexItem2 {
+    flex: 1;
   }
 }
 

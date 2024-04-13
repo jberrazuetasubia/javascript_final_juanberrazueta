@@ -29,6 +29,7 @@ const Home = () => {
           <div className="flexItem2">
             <ImageGrid className="imageGrid" />
           </div>
+          
         </div>
       </div>
     </>

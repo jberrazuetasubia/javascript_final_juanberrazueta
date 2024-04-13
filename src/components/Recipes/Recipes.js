@@ -33,7 +33,6 @@ function Recipes() {
 
   const [searchTerm, setSearchTerm] = useState('');
 
-  const [loading, setLoading] = useState(true);
 
 
   useEffect(() => {
